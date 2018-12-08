@@ -2,11 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
   <title></title>
   <style>
     html, body {
       margin: 0px;
       height: 100%;
+      font-family: 'Noto Sans KR', sans-serif;
     }
     body {
       display: table;
@@ -44,17 +46,48 @@
     }
     table {
       border-collapse: collapse;
+      margin: 0 auto; /* 중앙 정렬 */
+      margin-bottom: 20px;
+      text-align: right;
     }
-    table, th, td {
-      border: 1px solid black;
+    form {
+      text-align: center;
+    }
+    #wrapper {
+      width: 40%;
+      margin: 0 auto; /* 중앙 정렬 */
+      margin-top: 100px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      border: solid 1px rgb(39, 39, 71);
+    }
+    .image {
+      width: 70%;
+      margin-left: auto; /* 이미지 중앙 정렬 */
+      margin-right: auto; /* 이미지 중앙 정렬 */
+      display: block; /* 이미지 중앙 정렬 */
+      margin-bottom: 20px;
+      opacity: 0.7;
     }
   </style>
 </head>
+
 <body>
-  <form action="login.jsp" method="post">
-    ID: <input type="text" name="id"><br>
-    Password: <input type="password" name="pw"><br>
-    <input type="submit" value="Sign in"><br>
-  </form>
+  <div id="wrapper">
+    <img class="image" src="./img/dido.jpg">
+    <form action="login.jsp" method="post">
+      <table>
+        <tr>
+          <td>ID:</td>
+          <td><input type="text" name="id"></td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td><input type="password" name="pw"></td>
+        </tr>
+      </table>
+      <input type="submit" value="Sign in"><br>
+    </form>
+  </div>
 </body>
 </html>
