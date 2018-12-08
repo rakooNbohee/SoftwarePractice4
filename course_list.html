@@ -1,12 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0px;
       height: 100%;
+      font-family: 'Noto Sans KR', sans-serif;
     }
     body {
       display: table;
@@ -42,6 +45,16 @@
       clear: both;
       background-color: #82b9d6;
     }
+    #nav ul {
+      list-style: none;
+    }
+    #nav a {
+      text-decoration: none;
+      color: #455F50;
+    }
+    #nav a:hover {
+      color: #789D9E;
+    }
     table {
       border-collapse: collapse;
     }
@@ -49,22 +62,34 @@
       border: 1px solid black;
     }
   </style>
+  <script>
+    function Delete(){
+      if(confirm("삭제하시겠습니까?")){
+        location.href="del_course.jsp"
+      }
+    }
+    function Edit(){
+      if(confirm("수정하시겠습니까?")){
+        location.href="edit_course.jsp"
+      }
+    }
+  </script>
 </head>
 <body>
   <div id="header">
     header
+    <form action="logout.jsp">
+      <input type="submit" value="로그아웃">
+    </form>
   </div>
   <div id="middle">
     <div id="nav">
       navigator
       <ul>
-        <li><a href="#">메뉴1</a></li>
-        <li><a href="#">메뉴2</a></li>
-        <li><a href="#">메뉴3</a></li>
-        <li><a href="#">메뉴4</a></li>
-        <li><a href="#">메뉴5</a></li>
-        <li><a href="#">메뉴6</a></li>
-        <li><a href="#">메뉴7</a></li>
+        <li><a href="reg_student.html">학생 등록</a></li>
+        <li><a href="reg_course.html">수업 등록</a></li>
+        <li><a href="course_list.html">수업 목록</a></li>
+        <li><a href="#">학생 목록</a></li>
       </ul>
     </div>
     <div id="content">
@@ -79,10 +104,10 @@
       </form>
       <table>
         <tr>
-          <th>교과목명</th> <th>교강사명</th> <th>인원<br>신청/제한</th> <th>학점</th> <th>신청상태</th>
+          <th>교과목명</th> <th>교강사명</th> <th>인원<br>신청/제한</th> <th>학점</th> <th>신청상태</th> <th></th>
         </tr>
         <tr>
-          <td>OS</td> <td>bnam</td> <td>70/75</td> <td>3</td> <td>신청종료</td>
+          <td>OS</td> <td>bnam</td> <td>70/75</td> <td>3</td> <td>신청종료</td> <td><a href="#" onClick="Delete()">삭제</a><br><a href="#" onClick="Edit()">수정</a></td>
         </tr>
       </table>
     </div>

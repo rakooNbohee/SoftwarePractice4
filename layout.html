@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0px;
       height: 100%;
+      font-family: 'Noto Sans KR', sans-serif;
     }
     body {
       display: table;
@@ -42,11 +45,35 @@
       clear: both;
       background-color: #82b9d6;
     }
+    #nav ul {
+      list-style: none;
+    }
+    #nav a {
+      text-decoration: none;
+      color: #455F50;
+    }
+    #nav a:hover {
+      color: #789D9E;
+    }
+
+    #header_line {
+      float: right;
+      margin: 10px 20px;
+    }
   </style>
+  <script>
+    function Logout(){
+      if(confirm("로그아웃하시겠습니까?")){
+        location.href="logout.jsp"
+      }
+    }
+
+  </script>
 </head>
 <body>
   <div id="header">
-    header
+    <span id="header_line"><span id="name">전라쿠</span>님 멍!멍멍멍!멍멍!&nbsp;&nbsp;
+    <input type="button" value="로그아웃" onClick="Logout()"></span>
   </div>
   <div id="middle">
     <div id="nav">
